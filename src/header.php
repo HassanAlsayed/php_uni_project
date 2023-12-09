@@ -14,7 +14,7 @@ require "../config/database.php";
 </head>
 
 <body>
-    <nav class="h-20 bg-gray-300 flex items-center">
+    <nav class="h-20 flex items-center">
         <div class="container mx-auto flex items-center justify-between">
             <h1 class="font-bold">Clinic</h1>
             <ul class="flex ml-4 items-center flex-1 space-x-2">
