@@ -1,6 +1,16 @@
 <?php
 require "../config/database.php";
 
+session_start();
+
+if (isset($_SESSION["username"], $_SESSION["user_id"], $_SESSION["role"])) {
+    $username = $_SESSION["username"];
+    $user_id = $_SESSION["user_id"];
+    $role = $_SESSION["role"];
+} else {
+    header("Location: login.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,14 +33,15 @@ require "../config/database.php";
                     <a href="patient.php">Patients</a>
                 </li>
                 <li>
-                    <a href="doctors.php">Doctors</a>
+                    <a href="appointment.php">Appointments</a>
                 </li>
-                <li>
-                    <a href="appointment.php">Appointment</a>
-                </li>
+                <?php if ($role == "admin") { ?>
+                    <li>
+                        <a href="users.php">Manage users</a>
+                    </li>
+                <?php } ?>
             </ul>
             <div>
-                <a href="register.php">Register</a>
                 <a href="login.php">Login</a>
                 <a href="logout.php">Logout</a>
                 <a href="profile.php">Profile</a>

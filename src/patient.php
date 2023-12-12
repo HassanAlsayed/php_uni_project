@@ -32,9 +32,14 @@ require "./header.php";
                     </div>
                 </div>
                 <p class="mt-2 text-gray-500">Last checkup: 2 weeks ago</p>
-                <a class="mt-2 underline text-blue-500" href="#">
-                    View Details
-                </a>
+                <div class="flex items-center space-x-2">
+                    <a class="mt-2 underline text-blue-500" href="/patient-details.php">
+                        View Details
+                    </a>
+                    <a class="mt-2 underline text-blue-500" href="#">
+                        Update info
+                    </a>
+                </div>
             </div>
         </div>
     </div>
