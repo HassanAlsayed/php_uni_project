@@ -3,6 +3,10 @@
 include "../index.php";
 include "./header.php";
 
+if ($_SESSION['role'] != 'admin') {
+    header("Location: ./login.php");
+}
+
 $error = "";
 
 if (isset($_POST["submit"])) {
